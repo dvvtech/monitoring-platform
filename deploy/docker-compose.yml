@@ -1,5 +1,5 @@
 services:
-  analytics_api:
+  monitoring_api:
     image: ghcr.io/dvvtech/monitoring-platform:latest
     environment:
       - ASPNETCORE_ENVIRONMENT=Prod                 
@@ -12,10 +12,10 @@ services:
         condition: on-failure
       labels:      
         - "traefik.enable=true"
-        - "traefik.http.routers.portainer.rule=Host(`monitoring.cloud-platform.pro`)"
-        - "traefik.http.routers.portainer.entrypoints=websecure"
-        - "traefik.http.routers.portainer.tls.certresolver=letsencrypt"
-        - "traefik.http.services.portainer.loadbalancer.server.port=9000"
+        - "traefik.http.routers.monitoring.rule=Host(`monitoring.cloud-platform.pro`)"
+        - "traefik.http.routers.monitoring.entrypoints=websecure"
+        - "traefik.http.routers.monitoring.tls.certresolver=letsencrypt"
+        - "traefik.http.services.monitoring.loadbalancer.server.port=9000"
 
 networks:
   public-network5:
