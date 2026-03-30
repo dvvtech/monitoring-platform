@@ -1,12 +1,14 @@
 {
   "profiles": {
     "http": {
-      "commandName": "Project",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:5029"
+        "commandName": "Project",
+        "launchBrowser": true,
+        "launchUrl": "healthchecks-ui",
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development"
+        },
+        "dotnetRunMessages": true,
+        "applicationUrl": "http://localhost:5029"
     },
     "https": {
       "commandName": "Project",
