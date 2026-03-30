@@ -15,7 +15,7 @@ services:
         - "traefik.http.routers.monitoring.rule=Host(`monitoring.cloud-platform.pro`)"
         - "traefik.http.routers.monitoring.entrypoints=websecure"
         - "traefik.http.routers.monitoring.tls.certresolver=letsencrypt"
-        - "traefik.http.services.monitoring.loadbalancer.server.port=9000"
+        - "traefik.http.services.monitoring.loadbalancer.server.port=9001"
 
 networks:
   public-network5:
