@@ -1,8 +1,9 @@
+using Monitoring.Api.AppStart;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services
-    .AddHealthChecksUI()
-    .AddInMemoryStorage();
+var startup = new Startup(builder);
+startup.Initialize();
 
 builder.Services.AddControllers();
 
@@ -14,7 +15,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-//app.MapHealthChecks("/health");
 app.MapHealthChecksUI();
 
 app.Run();

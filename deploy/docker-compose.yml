@@ -4,7 +4,10 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Prod                 
     networks:
-      - public-network5    
+      - public-network5
+    secrets:
+      - Telegram__BotToken
+      - Telegram__ChatId
     deploy:
       mode: replicated
       replicas: 1
@@ -19,4 +22,10 @@ services:
 
 networks:
   public-network5:
-    external: true    
+    external: true
+    
+secrets:
+  Telegram__BotToken:
+    external: true  
+  Telegram__ChatId:
+    external: true
